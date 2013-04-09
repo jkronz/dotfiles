@@ -2,12 +2,30 @@
 	name = Justin Kronz
 	email = jkronz@gmail.com
 [color]
-	ui = auto
+   ui = auto
+[color "branch"]
+   current = green
+   local = white
+   remote = yellow
 [core]
 	autocrlf = input
-	excludesfile = /Users/justin/.gitignore_global
+	excludesfile = /Users/justin/.gitignore
 [alias]
 	logr = log -M
 	prune-all = !git remote | xargs -n 1 git remote prune
- 	remove-branch = "!sh -c 'git branch -D $1 && git push origin :$1' -"
-	
+   remove-branch = "!sh -c 'git branch -D $1 && git push origin :$1' -"
+   pl = pull --ff-only
+   br = branch
+   c  = commit
+   co = checkout
+   cp = cherry-pick
+   df = diff
+   dh = diff HEAD
+   dc = diff --staged
+   lf = log --pretty=fuller
+   lg = log
+   lp = log -p
+   lod = log --oneline --decorate
+   lpo = log --pretty=oneline --abbrev-commit --graph --decorate
+   st = status
+   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
