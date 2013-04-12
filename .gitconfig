@@ -22,6 +22,7 @@
    df = diff
    dh = diff HEAD
    dc = diff --staged
+   retag = "!sh -c 'git tag -f $1 && git push origin $1' -"
    lf = log --pretty=fuller
    lg = log
    lp = log -p
