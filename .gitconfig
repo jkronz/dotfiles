@@ -1,6 +1,6 @@
 [user]
-	name = Justin Kronz
-	email = jkronz@gmail.com
+   name = Justin Kronz
+   email = jkronz@gmail.com
 [color]
    ui = auto
 [color "branch"]
@@ -8,14 +8,16 @@
    local = white
    remote = yellow
 [core]
-	autocrlf = input
-	excludesfile = /Users/justin/.gitignore
+   autocrlf = input
+   excludesfile = /Users/justin/.gitignore
 [alias]
-	logr = log -M
-	prune-all = !git remote | xargs -n 1 git remote prune
+   pushf = push --force-with-lease
+   rei = "!sh -c 'git rebase -i HEAD~$1' -"
+   logr = log -M
+   prune-all = !git remote | xargs -n 1 git remote prune
    remove-branch = "!sh -c 'git branch -D $1 && git push origin :$1' -"
    pl = pull --ff-only
-   br = branch
+   cob = checkout -b
    c  = commit
    co = checkout
    cp = cherry-pick
@@ -24,7 +26,7 @@
    dc = diff --staged
    retag = "!sh -c 'git tag -f $1 && git push origin $1' -"
    standup = log --graph --pretty=format:'%Cred%h%Creset -%Cgreen %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --since="yesterday"
-   praise = blame
+   context = blame
    lf = log --pretty=fuller
    lg = log
    lp = log -p
@@ -32,3 +34,11 @@
    lpo = log --pretty=oneline --abbrev-commit --graph --decorate
    st = status
    pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
+   cleanup = "!git branch --merged | grep  -v '\\*\\|master' | xargs -n 1 git branch -d && git remote prune origin"
+   fixup = commit --amend --no-edit
+   sync = "!sh -c 'git fetch && git merge origin/master --ff-only'"
+[filter "lfs"]
+   clean = git-lfs clean %f
+   smudge = git-lfs smudge %f
+   required = true
+   cont = rebase --continue
