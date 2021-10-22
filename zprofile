@@ -1,3 +1,4 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
@@ -149,3 +150,4 @@ compdef _rake rake
 #  END
 # -----------------------------------------------
 
+test

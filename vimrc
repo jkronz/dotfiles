@@ -151,7 +151,7 @@ if &t_Co >= 256
       colors peaksea
    else
       set background=dark
-      colors idlefingers256
+      colors default
    endif
 else
    set background=dark
