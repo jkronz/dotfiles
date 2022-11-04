@@ -7,6 +7,7 @@ setopt hist_ignore_all_dups
 setopt clobber
 
 export PATH=/usr/local/sbin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
    export PATH="$HOME/bin:$PATH"
@@ -69,16 +70,6 @@ else
    _etc_hosts=()
 fi
 
-hosts=(
-"$_etc_hosts[@]"
-#Add favourite hosts here, and zsh will autocomplete them   
-   cloud.vitrue.com
-)
-
-my_accounts=(
-#Add favourite accounts here, and zsh will autocomplete them
-   deploy@justin.dev.cloud.vitrue.com
-)
 # Import local favorite hosts and accounts
 [[ -s "$HOME/.hosts" ]] && . "$HOME/.hosts"
 
@@ -143,6 +134,8 @@ compdef _rake rake
 # Import local environment
 [[ -s "$HOME/.aliases" ]] && . "$HOME/.aliases"
 
+[[ -s "$HOME/callrail.zshrc" ]] && . "$HOME/callrail.zshrc"
+
 # Import rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && export rvm_prefix="$HOME/." && . "$HOME/.rvm/scripts/rvm"
 
@@ -150,4 +143,14 @@ compdef _rake rake
 #  END
 # -----------------------------------------------
 
-test
+source ~/src/setup/callrail.zshrc
+
+source ~/.callrail_personal.zshrc
+
+eval "$(rbenv init - zsh)"
+
+export NVM_DIR="/Users/justin/.nvm"
+
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
