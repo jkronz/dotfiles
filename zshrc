@@ -143,10 +143,6 @@ compdef _rake rake
 #  END
 # -----------------------------------------------
 
-source ~/src/setup/callrail.zshrc
-
-source ~/.callrail_personal.zshrc
-
 eval "$(rbenv init - zsh)"
 
 export NVM_DIR="/Users/justin/.nvm"
