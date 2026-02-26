@@ -154,3 +154,15 @@ export NVM_DIR="/Users/justin/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+export AWS_VAULT_KEYCHAIN_NAME=login
+export AWS_PROFILE="cr-stage"
+export AWS_DEFAULT_REGION=us-east-1
+
+function ave() {
+  aws-vault exec --duration=12h -- $@
+}
+
+function avl() {
+  aws-vault login -- $@
+}
