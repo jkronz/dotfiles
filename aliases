@@ -26,5 +26,5 @@ alias ossh=ssh -F ~/.ssh/proxy_config
 alias goprod="kubectl config use-context prod"
 alias godev="kubectl config use-context non-prod"
 alias gowest="kubectl config use-context prod-west"
-alias callrail_staging="aws-vault exec cr-stage-dev bingo ssm console callrail staging"
-alias callrail_production="aws-vault exec cr-prod-lead -- bingo ssm console callrail us-east-1 --region us-east-1 --role util"
+alias callrail_staging="aws-vault exec cr-stage-dev -- kubectl rails c callrail-staging callrail -n staging --memory=1Gi"
+alias callrail_production="aws-vault exec cr-prod-lead -- kubectl rails c callrail-prod callrail -n prod --memory=1Gi"
