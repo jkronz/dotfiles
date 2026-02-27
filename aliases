@@ -23,5 +23,8 @@ alias mysql="/usr/local/Cellar/mysql/5.5.20/bin/mysqld --skip-grant &"
 alias force_del="git branch -D $1 && git push origin :$1"
 alias ossh=ssh -F ~/.ssh/proxy_config
 
+alias goprod="kubectl config use-context prod"
+alias godev="kubectl config use-context non-prod"
+alias gowest="kubectl config use-context prod-west"
 alias callrail_staging="aws-vault exec cr-stage-dev bingo ssm console callrail staging"
 alias callrail_production="aws-vault exec cr-prod-lead -- bingo ssm console callrail us-east-1 --region us-east-1 --role util"

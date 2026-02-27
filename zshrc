@@ -145,16 +145,16 @@ compdef _rake rake
 
 eval "$(rbenv init - zsh)"
 
-export NVM_DIR="/Users/justin/.nvm"
-
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_PROFILE="cr-stage"
 export AWS_DEFAULT_REGION=us-east-1
 
+source $HOME/.personal_tokens.zsh
+source $HOME/.dockercfg
 function ave() {
   aws-vault exec --duration=12h -- $@
 }
