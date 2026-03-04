@@ -11,6 +11,7 @@
    autocrlf = input
    excludesfile = /Users/justinkronz/.gitignore
    attributesfile = /Users/justinkronz/.gitattributes_global
+	hooksPath = /Users/justinkronz/.githooks
 [help]
    autocorrect = 1
 [push]
