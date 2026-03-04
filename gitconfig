@@ -9,8 +9,8 @@
    remote = yellow
 [core]
    autocrlf = input
-   excludesfile = /Users/justin/.gitignore
-   attributesfile = /Users/justin/.gitattributes_global
+   excludesfile = /Users/justinkronz/.gitignore
+   attributesfile = /Users/justinkronz/.gitattributes_global
 [help]
    autocorrect = 1
 [push]
