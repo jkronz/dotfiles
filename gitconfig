@@ -30,6 +30,7 @@
    df = diff
    dh = diff HEAD
    dc = diff --staged
+   reword = commit --amend
    retag = "!sh -c 'git tag -f $1 && git push origin $1' -"
    standup = log --graph --pretty=format:'%Cred%h%Creset -%Cgreen %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --since="yesterday"
    context = blame
