@@ -170,3 +170,4 @@ export PATH="$HOME/.local/bin:$PATH"
 # qlty
 export QLTY_INSTALL="$HOME/.qlty"
 export PATH="$QLTY_INSTALL/bin:$PATH"
+export GPG_TTY=$(tty)

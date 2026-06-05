@@ -10,4 +10,5 @@ brew install bashdot
 bashdot install src/dotfiles
 ```
 
+
 Clone this repo into ~/dotfiles (or pick a different name), then `bashdot install dotfiles` to symlink them into your env./
