@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 input=$(cat)
 
+# "statusLine": {
+#    "type": "command",
+#    "command": "~/.claude_status.sh",
+#    "padding": 0
+# }
+
 MODEL=$(echo "$input" | jq -r '.model.display_name')
 DIR=$(echo "$input" | jq -r '.workspace.current_dir')
 COST=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
